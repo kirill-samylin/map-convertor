@@ -22,7 +22,6 @@ export const ConvertorMapProvider = ({children}) => {
       downloadFile(fileName.split('.')[0], data)
     }
   }, [table, fileName])
-
   const zonesOptions = useMemo(() =>
     zones.map(([zone, title]) => ({
       zone,

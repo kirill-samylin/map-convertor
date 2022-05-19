@@ -3,6 +3,7 @@ import {Header} from '../Header'
 import {Table} from '../Table'
 import {Link, ListItem, OrderedList, Tab, TabList, TabPanel, TabPanels, Tabs} from '@chakra-ui/react'
 import {useConvertorMapContext} from '../../lib/ConvertorMapProvider'
+import {ExternalLinkIcon} from '@chakra-ui/icons'
 
 export const App = () => {
   const {table} = useConvertorMapContext()
@@ -29,12 +30,15 @@ export const App = () => {
               <ListItem>Нажать на кнопку скачать (файл с расширением .geojson)</ListItem>
               <ListItem>
                 Зайти на сайт
-                <Link color="blue.600" target="_blank" href="ttps://yandex.ru/map-constructor">
+                <Link color="blue.600" target="_blank" href="https://yandex.ru/map-constructor">
                   https://yandex.ru/map-constructor
                 </Link>
               </ListItem>
               <ListItem>Слева нажать «Импорт» и импортировать файл .geojson</ListItem>
             </OrderedList>
+            <Link href='https://github.com/kirill-samylin/map-convertor' isExternal>
+              Git <ExternalLinkIcon mx='2px' />
+            </Link>
           </TabPanel>
           <TabPanel>
             <Table />

@@ -11,7 +11,7 @@ export function loadFile(file) {
       const data = utils.sheet_to_json(ws, {header: 1});
       success({
         headers: data[0],
-        body: data.slice(1)
+        body: data.slice(1).filter(([n, s, x, y]) => x && y)
       })
     }
     reader.onerror = reject;
