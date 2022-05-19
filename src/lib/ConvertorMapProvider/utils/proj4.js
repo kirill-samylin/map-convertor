@@ -24,6 +24,14 @@ const coordinateTransform = (x, y, sourceName = 'MB:6335404', destName= 'WGS84')
   return proj4.toPoint([pointDest.y, pointDest.x]);
 }
 
+const conversionCoordinates = (coordinates, sourceName, destName) => coordinates.map((item) => {
+  if (item.length === 0) return item
+  const [number, size, x, y] = item;
+  if (!Boolean(x) || !Boolean(y)) return item
+  const coordinate = coordinateTransform(x, y, sourceName, destName)
+  return [number, size, coordinate.x, coordinate.y]
+})
+
 const getGeoJson = (arr) => {
   const features = arr.reduce((acc, item) => {
     const [number, size, x, y] = item;
@@ -57,7 +65,7 @@ const getGeoJson = (arr) => {
     return acc
   }, [])
 
-  const geoJson = {
+  return {
     "type": "FeatureCollection",
     "metadata": {
       "name": "Карта",
@@ -65,7 +73,6 @@ const getGeoJson = (arr) => {
     },
     features,
   }
-  return geoJson
 }
 
 
@@ -74,4 +81,5 @@ export {
   zones,
   coordinateTransform,
   getGeoJson,
+  conversionCoordinates,
 }
