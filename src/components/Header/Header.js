@@ -79,14 +79,14 @@ export const Header = () => {
         <Tooltip label='Очистить'>
           <IconButton aria-label='Очистить' icon={<DeleteIcon />} onClick={onClean} disabled={!fileName || loading}/>
         </Tooltip>
-        <Select placeholder='Входные координаты' maxWidth='170px' value={destName} onChange={selectDestName}>
-          {destZones.map((zone) => (
-            <option key={zone} value={zone}>{zone}</option>
-          ))}
-        </Select>
-        <Select placeholder='Выходные координаты' maxWidth='240px' value={sourceName} onChange={selectSourceName}>
+        <Select placeholder='Входные координаты' maxWidth='240px' value={sourceName} onChange={selectSourceName}>
           {zones.map(({zone, title}) => (
             <option key={zone} value={zone}>{`${zone} - ${title}`}</option>
+          ))}
+        </Select>
+        <Select placeholder='Выходные координаты' maxWidth='170px' value={destName} onChange={selectDestName}>
+          {destZones.map((zone) => (
+            <option key={zone} value={zone}>{zone}</option>
           ))}
         </Select>
         <Button isDisabled={!Boolean(table)} type='button' onClick={handleConversion}>Конвертировать</Button>

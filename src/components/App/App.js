@@ -21,18 +21,19 @@ export const App = () => {
             <OrderedList>
               <ListItem>
                 Загрузить файл .xls с таблицей с координатами.
-                <Link color="blue.600" target="_blank" href="https://disk.yandex.ru/i/TZ3tzebfWekktQ">
+                <Link color="blue.600" target="_blank" href="https://disk.yandex.ru/i/BLVwKwi1QjXvjw">
                   Пример
                 </Link>
               </ListItem>
-              <ListItem>Нажать на кнопку скачать (должен скачаться файл с расширением .geojson)</ListItem>
+              <ListItem>Выберите входной и выходной формат</ListItem>
+              <ListItem>Нажать на кнопку скачать (файл с расширением .geojson)</ListItem>
               <ListItem>
                 Зайти на сайт
                 <Link color="blue.600" target="_blank" href="ttps://yandex.ru/map-constructor">
                   https://yandex.ru/map-constructor
                 </Link>
               </ListItem>
-              <ListItem>Слева нажать «Импорт» и импортировать</ListItem>
+              <ListItem>Слева нажать «Импорт» и импортировать файл .geojson</ListItem>
             </OrderedList>
           </TabPanel>
           <TabPanel>
